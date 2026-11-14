@@ -1,0 +1,71 @@
+.card {
+  position: relative;
+  margin-top: 24px;
+  padding: 22px;
+  background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+  border: 2px dashed var(--accent);
+  border-radius: var(--radius);
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--accent-dark);
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+h3 {
+  color: var(--accent-dark);
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+.details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+.details li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.08);
+}
+
+.details span {
+  color: var(--text-muted);
+}
+
+.details strong {
+  color: var(--text);
+}
+
+.actions {
+  margin-bottom: 16px;
+}
+
+.message-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.message-row input {
+  flex: 1 1 220px;
+}
+
+.message-row button {
+  margin: 0;
+}

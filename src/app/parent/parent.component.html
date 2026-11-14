@@ -1,0 +1,35 @@
+<div class="card parent-card">
+  <span class="badge">PARENT</span>
+  <h2>Parent Component</h2>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-label">Quantity</span>
+      <span class="stat-value">{{ cartQuantity }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Total</span>
+      <span class="stat-value">${{ cartQuantity * productPrice }}</span>
+    </div>
+  </div>
+
+  <p class="message">
+    Last message from child:
+    <em>{{ lastMessage || '(none yet)' }}</em>
+  </p>
+
+  <button class="btn-danger" (click)="cartQuantity = 0">Reset from parent</button>
+
+  <!--
+    [productName], [price], [qty]   -> @Input bindings  (parent -> child)
+    (quantityChange), (messageSent) -> @Output bindings (child -> parent)
+    $event holds the value the child passed to emit()
+  -->
+  <app-child
+    [productName]="productName"
+    [price]="productPrice"
+    [qty]="cartQuantity"
+    (quantityChange)="onQuantityChange($event)"
+    (messageSent)="onMessage($event)">
+  </app-child>
+</div>

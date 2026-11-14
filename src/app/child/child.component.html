@@ -1,0 +1,22 @@
+<div class="card child-card">
+  <span class="badge">CHILD</span>
+  <h3>Child Component</h3>
+
+  <!-- Values received from the parent via @Input -->
+  <ul class="details">
+    <li><span>Product</span><strong>{{ productName }}</strong></li>
+    <li><span>Price</span><strong>${{ price }}</strong></li>
+    <li><span>Quantity (from parent)</span><strong>{{ quantity }}</strong></li>
+  </ul>
+
+  <!-- Clicking these buttons emits events back to the parent via @Output -->
+  <div class="actions">
+    <button class="btn-accent" (click)="increase()">+ Add one</button>
+    <button (click)="decrease()" [disabled]="quantity === 0">− Remove one</button>
+  </div>
+
+  <div class="message-row">
+    <input #msg placeholder="Type a message for the parent..." (keyup.enter)="sendMessage(msg.value); msg.value = ''" />
+    <button class="btn-accent" (click)="sendMessage(msg.value); msg.value = ''">Send to parent</button>
+  </div>
+</div>
